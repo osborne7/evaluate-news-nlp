@@ -17,16 +17,35 @@
         </header>
 
         <main>
+            <div id="banner">
+                    <h1>Automatic Sentiment Evaluation for Text</h1>
+                    <h2>Discover the tone and subjectivity of news articles, blog posts, and phrases.</h2>
+            </div>
             <section>
+                <h2>URL evaluator</h2>
+                <h3>Paste a valid URL below to get its stats! Paste the entire URL, including https://</h3>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
+                    <input id="url" type="url" name="user-url" value="" placeholder="https://www.cnn.com/asia/live-news/...">
                     <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
-
             <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
+                <h2>Text evaluator</h2>
+                    <h3>Enter some text below to get its stats!</h3>
+                    <form class="" onsubmit="return Client.tweetSubmit(event)">
+                        <input id="tweet" type="text" value="" placeholder="The blueberry is the world's best fruit.">
+                        <input type="submit" name="" value="submit" onclick="return Client.tweetSubmit(event)" onsubmit="return Client.tweetSubmit(event)">
+                    </form>
+                <section>    
+
+            <section id="results">
+                <h2><strong>Results</strong></h2>
+                    <ul>
+                        <li>Subjectivity: <span id='subjectivity'></span></li>
+                        <li>Subjectivity Certainty: <span id='subj-certainty'></span></li>
+                        <li>Tone: <span id='tone'></span></li>
+                        <li>Tone Certainty: <span id='tone-certainty'></span></li>
+                    </ul>
             </section>
         </main>
 

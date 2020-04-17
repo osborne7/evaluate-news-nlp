@@ -1,8 +1,8 @@
-function handleSubmit(event) {
+////tweet submit
+
+function tweetSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form field
-    let userURL = document.getElementById('url').value;
 
     const subjResult = document.getElementById('subjectivity');
     const subjConfidence = document.getElementById('subj-certainty');
@@ -14,14 +14,19 @@ function handleSubmit(event) {
     polarityResult.innerHTML = '';
     polarityConfidence.innerHTML = '';
 
-    if (Client.checkURL(userURL)) {
-        console.log('that worked for ' + userURL);
-        fetch('http://localhost:8080/sentiment', {
+    // check what text was put into the form field
+    let userTweet = document.getElementById('tweet').value;
+    if (Client.checkURL(userTweet)) {
+        console.log('error: user entered a URL');
+        alert('Please use the URL validator above for URLs, try a sentence in this evaluator!');
+    } else {
+        console.log('user tweet: ' + userTweet);
+        fetch('http://localhost:8080/tweet', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ text: userURL })
+            body: JSON.stringify({ text: userTweet })
         })
         .then(res => res.json())
         .then(function(res) {
@@ -30,11 +35,10 @@ function handleSubmit(event) {
             subjConfidence.innerHTML = res.subjectivity_confidence;
             polarityResult.innerHTML = res.polarity;
             polarityConfidence.innerHTML = res.polarity_confidence;
+            //////ROUND THE CONFIDENCES TO ONLY A COUPLE DECIMALS?
             })
-        } else {
-            alert('URL invalid, please try again!');
-        }
+    }
     }
 
 
-export { handleSubmit }
+export { tweetSubmit }
