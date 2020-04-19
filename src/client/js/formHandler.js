@@ -30,6 +30,16 @@ function handleSubmit(event) {
             subjConfidence.innerHTML = res.subjectivity_confidence;
             polarityResult.innerHTML = res.polarity;
             polarityConfidence.innerHTML = res.polarity_confidence;
+
+
+            ///reset userURL, this isn't working
+            // userURL = '';
+
+            let scrollTo = document.getElementById('results');
+        scrollTo.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        })
             })
         } else {
             alert('URL invalid, please try again!');

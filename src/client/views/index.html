@@ -3,40 +3,45 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
+        <link href="https://fonts.googleapis.com/css2?family=Codystar&family=Roboto&display=swap&family=Bungee+Hairline&display=swap" rel="stylesheet">
     </head>
-
     <body>
 
         <header>
-            <div class="">
-                Logo
+            <div class="logo">
+                    <img src="https://image.flaticon.com/icons/svg/2813/2813497.svg" class="logo" alt="Server icon">
             </div>
-            <div class="">
-                navigation
+            <div class="nav">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
             </div>
         </header>
 
         <main>
             <div id="banner">
-                    <h1>Automatic Sentiment Evaluation for Text</h1>
-                    <h2>Discover the tone and subjectivity of news articles, blog posts, and phrases.</h2>
+                    <h1>Automatic Sentiment Evaluation</h1>
+                    <h2>Discover the tone and subjectivity of news articles, blog posts, and phrases</h2>
             </div>
-            <section>
+            <section id="url-evaluator">
                 <h2>URL evaluator</h2>
-                <h3>Paste a valid URL below to get its stats! Paste the entire URL, including https://</h3>
+                <h3>Evaluate a news article or blog post via its URL</h3>
+                <h3>Paste a valid URL below, including https://</h3>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <input id="url" type="url" name="user-url" value="" placeholder="https://www.cnn.com/asia/live-news/...">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input class="submit" type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
-            <section>
-            <section>
+            </section>
+            <section id="text-evaluator">
                 <h2>Text evaluator</h2>
+                    <h3>Evaluate a text snippet by pasting or typing a sentence or phrase</h3>
                     <h3>Enter some text below to get its stats!</h3>
                     <form class="" onsubmit="return Client.tweetSubmit(event)">
                         <input id="tweet" type="text" value="" placeholder="The blueberry is the world's best fruit.">
-                        <input type="submit" name="" value="submit" onclick="return Client.tweetSubmit(event)" onsubmit="return Client.tweetSubmit(event)">
+                        <input class="submit" type="submit" name="" value="submit" onclick="return Client.tweetSubmit(event)" onsubmit="return Client.tweetSubmit(event)">
                     </form>
-                <section>    
+                </section>    
 
             <section id="results">
                 <h2><strong>Results</strong></h2>
@@ -50,10 +55,10 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </footer>
 
-        <script>
+        <!-- <script>
                 // Check that service workers are supported
                 if ('serviceWorker' in navigator) {
                     // Use the window load event to keep the page load performant
@@ -61,7 +66,7 @@
                         navigator.serviceWorker.register('/service-worker.js');
                     });
                 }
-            </script>
+            </script> -->
 
     </body>
 </html>

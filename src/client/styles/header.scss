@@ -1,5 +1,22 @@
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px 40px;
+    // padding: 10px 40px;
+}
+
+.logo {
+    padding: .3em;
+    width: 20%;
+}
+
+.nav {
+    padding: .3em;
+
+    li {
+        margin: .7em;
+    }
+}
+
+a {
+    text-decoration: none;
 }

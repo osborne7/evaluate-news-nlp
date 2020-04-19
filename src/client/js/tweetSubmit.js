@@ -36,6 +36,15 @@ function tweetSubmit(event) {
             polarityResult.innerHTML = res.polarity;
             polarityConfidence.innerHTML = res.polarity_confidence;
             //////ROUND THE CONFIDENCES TO ONLY A COUPLE DECIMALS?
+            
+            // reset userTweet, this isn't working
+            // userTweet = '';
+            
+            let scrollTo = document.getElementById('results');
+            scrollTo.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
             })
     }
     }
