@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Automatic Sentiment Evaluation</title>
         <link href="https://fonts.googleapis.com/css2?family=Codystar&family=Roboto&display=swap&family=Bungee+Hairline&display=swap" rel="stylesheet">
     </head>
     <body>
-
         <header>
             <div class="logo">
-                    <img src="https://image.flaticon.com/icons/svg/2813/2813497.svg" class="logo" alt="Server icon">
+                <img src="https://image.flaticon.com/icons/svg/2813/2813497.svg" class="logo" alt="Server icon">
             </div>
             <div class="nav">
                 <ul>
@@ -18,7 +17,6 @@
                 </ul>
             </div>
         </header>
-
         <main>
             <div id="banner">
                     <h1>Automatic Sentiment Evaluation</h1>
@@ -35,38 +33,34 @@
             </section>
             <section id="text-evaluator">
                 <h2>Text evaluator</h2>
-                    <h3>Evaluate a text snippet by pasting or typing a sentence or phrase</h3>
-                    <h3>Enter some text below to get its stats!</h3>
-                    <form class="" onsubmit="return Client.tweetSubmit(event)">
-                        <input id="tweet" type="text" value="" placeholder="The blueberry is the world's best fruit.">
-                        <input class="submit" type="submit" name="" value="submit" onclick="return Client.tweetSubmit(event)" onsubmit="return Client.tweetSubmit(event)">
-                    </form>
-                </section>    
-
+                <h3>Evaluate a text snippet by pasting or typing a sentence or phrase</h3>
+                <h3>Enter some text below to get its stats!</h3>
+                <form class="" onsubmit="return Client.tweetSubmit(event)">
+                    <input id="tweet" type="text" value="" placeholder="The blueberry is the world's best fruit.">
+                    <input class="submit" type="submit" name="" value="submit" onclick="return Client.tweetSubmit(event)" onsubmit="return Client.tweetSubmit(event)">
+                </form>
+            </section>    
             <section id="results">
                 <h2><strong>Results</strong></h2>
-                    <ul>
-                        <li>Subjectivity: <span id='subjectivity'></span></li>
-                        <li>Subjectivity Certainty: <span id='subj-certainty'></span></li>
-                        <li>Tone: <span id='tone'></span></li>
-                        <li>Tone Certainty: <span id='tone-certainty'></span></li>
-                    </ul>
+                <ul>
+                    <li>Subjectivity: <span id="subjectivity"></span></li>
+                    <li>Subjectivity Certainty: <span id="subj-certainty"></span></li>
+                    <li>Tone: <span id="tone"></span></li>
+                    <li>Tone Certainty: <span id="tone-certainty"></span></li>
+                </ul>
             </section>
         </main>
-
         <footer>
-            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            <div class="footer">Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
         </footer>
-
         <script>
-                // Check that service workers are supported
-                if ('serviceWorker' in navigator) {
-                    // Use the window load event to keep the page load performant
-                    window.addEventListener('load', () => {
-                        navigator.serviceWorker.register('/service-worker.js');
-                    });
-                }
-            </script>
-
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>

@@ -15,7 +15,6 @@ function handleSubmit(event) {
     polarityConfidence.innerHTML = '';
 
     if (Client.checkURL(userURL)) {
-        console.log('that worked for ' + userURL);
         fetch('http://localhost:8080/sentiment', {
             method: 'POST',
             headers: {
@@ -25,26 +24,22 @@ function handleSubmit(event) {
         })
         .then(res => res.json())
         .then(function(res) {
-            console.log(res);
+            // console.log(res);
             subjResult.innerHTML = res.subjectivity;
             subjConfidence.innerHTML = res.subjectivity_confidence;
             polarityResult.innerHTML = res.polarity;
-            polarityConfidence.innerHTML = res.polarity_confidence;
+            polarityConfidence.innerHTML = res.polarity_confidence; 
 
-
-            ///reset userURL, this isn't working
-            // userURL = '';
-
+            //scroll to results
             let scrollTo = document.getElementById('results');
-        scrollTo.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+            scrollTo.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
         })
-            })
+        })
         } else {
             alert('URL invalid, please try again!');
         }
     }
-
 
 export { handleSubmit }

@@ -1,5 +1,4 @@
 $primary-font: 'Codystar', cursive;
-// $primary-font: 'Playfair Display', serif;
 $secondary-font: 'Roboto', sans-serif;
 $primary-color: rgb(59,59,59);
 $secondary-color: #eeeff3;
@@ -11,48 +10,12 @@ body {
     min-height: 100vh;
     font-family: $primary-font;
     color: $primary-color;
-    // background-color: rgba(198,217,193,.01);
     font-weight: 500;
 }
 
 main {
     flex: 2;
 }
-
-section {
-    max-width: 800px;
-    margin: 50px auto;
-    
-    // padding: 2em;
-    h2 {
-        color: $secondary-color;
-        font-size: 1.8em;
-    }
-}
-
-#url-evaluator {
-    background-color: #586589;
-    padding: 2em;
-    // border: 5px solid #eeeff3;
-    border-radius: 1.5em;
-    color: $secondary-color;
-    // h2 {
-    //     color: $secondary-color;
-    // }
-
-}
-
-#text-evaluator {
-    background-color: #198c8c;
-    padding: 2em;
-    border-radius: 1.5em;
-    color: $secondary-color;
-    // h2 {
-    //     color: $secondary-color;
-    // }
-}
-
-
 
 h1 {
     font-size: 3em;
@@ -78,26 +41,7 @@ h3 {
     text-align: center;
 }
 
-#results {
-    font-size: 1.2em;
-    // text-align: center;
-    background-color: #cd5555;
-    padding: 2em;
-    border-radius: 1.5em;
-    font-family: $primary-font;
-    h2 {
-        border-bottom: 0.5em solid $secondary-color;
-        border-radius: .4em;
-
-    }
-
-        li {
-            margin: 1.5em 0em;
-            color: $secondary-color;
-        }
-    }
-    
-//media query for small screens
+//reduce h3 text size for small screens
     @media(max-width: 686px) {
         h3 {
             font-size: .7em;

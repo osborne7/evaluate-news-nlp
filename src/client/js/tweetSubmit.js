@@ -1,8 +1,8 @@
-////tweet submit
-
 function tweetSubmit(event) {
     event.preventDefault()
 
+    // check what text was put into the form field
+    let userTweet = document.getElementById('tweet').value;
 
     const subjResult = document.getElementById('subjectivity');
     const subjConfidence = document.getElementById('subj-certainty');
@@ -14,10 +14,7 @@ function tweetSubmit(event) {
     polarityResult.innerHTML = '';
     polarityConfidence.innerHTML = '';
 
-    // check what text was put into the form field
-    let userTweet = document.getElementById('tweet').value;
     if (Client.checkURL(userTweet)) {
-        console.log('error: user entered a URL');
         alert('Please use the URL validator above for URLs, try a sentence in this evaluator!');
     } else {
         console.log('user tweet: ' + userTweet);
@@ -30,16 +27,13 @@ function tweetSubmit(event) {
         })
         .then(res => res.json())
         .then(function(res) {
-            console.log(res);
+            // console.log(res);
             subjResult.innerHTML = res.subjectivity;
             subjConfidence.innerHTML = res.subjectivity_confidence;
             polarityResult.innerHTML = res.polarity;
             polarityConfidence.innerHTML = res.polarity_confidence;
-            //////ROUND THE CONFIDENCES TO ONLY A COUPLE DECIMALS?
-            
-            // reset userTweet, this isn't working
-            // userTweet = '';
-            
+
+            //scroll to results
             let scrollTo = document.getElementById('results');
             scrollTo.scrollIntoView({
                 behavior: 'smooth',
@@ -48,6 +42,5 @@ function tweetSubmit(event) {
             })
     }
     }
-
 
 export { tweetSubmit }

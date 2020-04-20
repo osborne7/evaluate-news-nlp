@@ -6,7 +6,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 
-// const mockAPIResponse = require('./mockAPI.js')
 const app = express()
 
 app.use(express.static('dist'))
@@ -19,13 +18,10 @@ app.use(bodyParser.urlencoded({
 
 var AYLIENTextAPI = require('aylien_textapi');
 
-
 var textapi = new AYLIENTextAPI({
   application_id: process.env.API_ID,
   application_key: process.env.API_KEY
 });
-
-console.log(__dirname)
 
 app.get('/', function (req, res) {
     res.sendFile(path.resolve('dist/index.html'))
@@ -37,13 +33,12 @@ app.listen(8080, function () {
 })
 
 app.post('/sentiment', (req, res) => {
-    console.log('POST request document');
-    console.log(req.body);
+    // console.log(req.body);
     textapi.sentiment({
         url: req.body.text,
         mode: 'document'
     }, function(error, response) {
-        console.log('response: ' + response);
+        // console.log('response: ' + response);
         res.send(response)
         if (error === null) {
             console.log('error: ' + response);
@@ -52,18 +47,15 @@ app.post('/sentiment', (req, res) => {
 });
 
 app.post('/tweet', (req, res) => {
-    console.log('POST request tweet');
-    console.log('tweet body: ' + req.body);
+    // console.log('tweet body: ' + req.body);
     textapi.sentiment({
         text: req.body.text,
         mode: 'tweet'
     }, function(error, response) {
-        console.log('response: ' + response);
+        // console.log('response: ' + response);
         res.send(response)
         if (error === null) {
             console.log('error: ' + response);
         }
     })
 });
-
-// module.exports = app;

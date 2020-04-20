@@ -12,9 +12,17 @@ form {
 input {
     padding: 5px 20px;
     width: 100%;
-    // line-height: 16px;
     margin: 10px 0;
     outline: none;
+}
+
+section {
+    max-width: 800px;
+    margin: 50px auto;
+        h2 {
+        color: $secondary-color;
+        font-size: 1.8em;
+    }
 }
 
 .submit {
@@ -23,10 +31,8 @@ input {
     text-shadow: .2px .2px $primary-color;
     color: $primary-color;
     background-color: #80cdb3;
-    // border: 1em solid #f5f5f5;
     border-radius: 1em;
     width: 23%;
-    // text-decoration: none;
     &:hover {
         background-color: #61c1a1;
         cursor: pointer;
@@ -39,3 +45,34 @@ input {
 #url, #tweet {
     border-radius: 1em;
 }
+
+#url-evaluator {
+    background-color: #586589;
+    padding: 2em;
+    border-radius: 1.5em;
+    color: $secondary-color;
+}
+
+#text-evaluator {
+    background-color: #198c8c;
+    padding: 2em;
+    border-radius: 1.5em;
+    color: $secondary-color;
+}
+
+#results {
+    font-size: 1.2em;
+    background-color: #cd5555;
+    padding: 2em;
+    border-radius: 1.5em;
+    font-family: $primary-font;
+    h2 {
+        border-bottom: 0.5em solid $secondary-color;
+        border-radius: .4em;
+
+    }
+        li {
+            margin: 1.5em 0em;
+            color: $secondary-color;
+        }
+    }
