@@ -17,7 +17,7 @@ function tweetSubmit(event) {
     if (Client.checkURL(userTweet)) {
         alert('Please use the URL validator above for URLs, try a sentence in this evaluator!');
     } else {
-        console.log('user tweet: ' + userTweet);
+        // console.log('user tweet: ' + userTweet);
         fetch('http://localhost:8080/tweet', {
             method: 'POST',
             headers: {

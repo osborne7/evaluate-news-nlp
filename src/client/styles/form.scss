@@ -32,7 +32,8 @@ section {
     color: $primary-color;
     background-color: #80cdb3;
     border-radius: 1em;
-    width: 23%;
+    width: 30%;
+    // min-width: 20%;
     &:hover {
         background-color: #61c1a1;
         cursor: pointer;
