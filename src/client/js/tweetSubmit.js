@@ -21,7 +21,7 @@ function tweetSubmit(event) {
         alert('Please use the URL validator above for URLs, try a sentence in this evaluator!');
     } else {
         // console.log('user tweet: ' + userTweet);
-        fetch('http://localhost:8080/tweet', {
+        fetch('http://localhost:8081/tweet', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
