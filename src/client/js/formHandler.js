@@ -8,11 +8,14 @@ function handleSubmit(event) {
     const subjConfidence = document.getElementById('subj-certainty');
     const polarityResult = document.getElementById('tone');
     const polarityConfidence = document.getElementById('tone-certainty');
+    const textSnippet = document.getElementById('text-snippet');
 
     subjResult.innerHTML = '';
     subjConfidence.innerHTML = '';
     polarityResult.innerHTML = '';
     polarityConfidence.innerHTML = '';
+    textSnippet.innerHTML = '';
+
 
     if (Client.checkURL(userURL)) {
         fetch('http://localhost:8080/sentiment', {
@@ -29,6 +32,7 @@ function handleSubmit(event) {
             subjConfidence.innerHTML = res.subjectivity_confidence;
             polarityResult.innerHTML = res.polarity;
             polarityConfidence.innerHTML = res.polarity_confidence; 
+            textSnippet.innerHTML = res.text;
 
             //scroll to results
             let scrollTo = document.getElementById('results');

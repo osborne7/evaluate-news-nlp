@@ -39,10 +39,11 @@ app.post('/sentiment', (req, res) => {
         mode: 'document'
     }, function(error, response) {
         // console.log('response: ' + response);
-        res.send(response)
-        if (error === null) {
-            console.log('error: ' + response);
+        // res.send(response)
+        if (error) {
+            return res.status(400).json(response);
         }
+        return res.status(200).json(response);
     })
 });
 
@@ -53,9 +54,9 @@ app.post('/tweet', (req, res) => {
         mode: 'tweet'
     }, function(error, response) {
         // console.log('response: ' + response);
-        res.send(response)
-        if (error === null) {
-            console.log('error: ' + response);
+        if (error) {
+            return res.status(400).json(response);
         }
+        return res.status(200).json(response);
     })
 });

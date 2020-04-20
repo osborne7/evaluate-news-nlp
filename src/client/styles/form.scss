@@ -1,5 +1,6 @@
-$primary-font: 'Codystar', cursive;
-$alt-font: 'Bungee Hairline', cursive;
+$primary-font: 'Codystar', serif;
+$secondary-font: 'Roboto', sans-serif;
+$alt-font: 'Bungee Hairline', serif;
 $primary-color: rgb(59,59,59);
 $secondary-color: #eeeff3;
 
@@ -76,4 +77,18 @@ section {
             margin: 1.5em 0em;
             color: $secondary-color;
         }
+    }
+
+    #snippet {
+        border-top: 0.2em solid $secondary-color;
+        padding: 1em 0em;
+    }
+
+    #text-snippet {
+        font-family: $secondary-font;
+        font-size: .7em;
+    }
+
+    .wait {
+        cursor: wait;
     }
