@@ -21,6 +21,16 @@ If another developer is to work on this code in the future, they can run:
 ### Run in prod mode:
   - `npm install`, `npm run build-prod` and `npm start` to begin
 
+## Additional Files
+
+The .env file contains the API ID and KEY from Aylien.  They are referenced in server > index.js as such:
+
+```javascript
+  var textapi = new AYLIENTextAPI({
+  application_id: process.env.API_ID,
+  application_key: process.env.API_KEY
+  });
+```
 
 ## Testing
 
