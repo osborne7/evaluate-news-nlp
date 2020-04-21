@@ -6,6 +6,7 @@ This application takes in data from Aylien's Text API in order to display sentim
   - subjectivity certainty
   - polarity
   - polarity certainty
+  - analyzed text
 
 If the user enters an invalid URL, an alert will display. Similarly, if a user enters a URL into the Text Validator, an alert will display. 
 
