@@ -18,7 +18,8 @@ function handleSubmit(event) {
 
 
     if (Client.checkURL(userURL)) {
-        fetch('http://localhost:8081/sentiment', {
+    // fetch('http://localhost:8081/sentiment', {
+        fetch('/sentiment', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

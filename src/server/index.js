@@ -28,9 +28,20 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(8081, function () {
-    console.log('Example app listening on port 8081!')
-})
+// app.listen(8081, function () {
+//     console.log('Example app listening on port 8081!')
+// })
+
+const port = process.env.PORT || 8081;
+
+const server = app.listen(port, listening);
+
+function listening() {
+    console.log('server running');
+    console.log(`running on localhost: ${port}`);
+}
+
+
 
 app.post('/sentiment', (req, res) => {
     // console.log(req.body);
